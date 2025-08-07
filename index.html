@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Configuración básica del documento -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Card</title> <!-- Título que aparece en la pestaña del navegador -->
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  
+  <!-- Font Awesome para iconos - Si quieres otros iconos, cambia esta URL -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Estilos CSS externos -->
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<!-- === ESTRUCTURA HTML === -->
+<body>
+  <!-- Contenedor principal de la tarjeta -->
+  <div class="card">
+    
+    <!-- Sección de imágenes: banner y perfil superpuesta -->
+    <div class="image-container">
+      <!-- Imagen de fondo/banner - CAMBIAR src="images/Banner.png" por tu imagen -->
+      <img src="images/Banner.png" alt="Banner" class="banner">
+      <!-- Imagen de perfil - CAMBIAR src="images/Profile.jpg" por tu foto -->
+      <img src="images/Profile.png" alt="Foto de perfil" class="profile-img">
+    </div>
+    
+    <!-- Información personal -->
+    <h1>Metas Coaching Group</h1> <!-- CAMBIAR por tu nombre -->
+    <p class="titulo">Myrna Ayala</p> <!-- CAMBIAR por tu ubicación -->
+    <p>Nuestro enfoque es dirigido a personas, equipos y organizaciones en sus procesos de transformación y crecimiento, a través de programas de coaching profesional y talleres especializados.</p> <!-- CAMBIAR por tu descripción -->
+
+    <!-- Grilla de botones de contacto/redes sociales -->
+    <div class="button-grid">
+      <!-- Botón de servicios - ejecuta función JavaScript -->
+      <button class="button" onclick="mostrarServicios()">
+        <i class="fas fa-edit"></i> Servicios
+      </button>
+      
+      <!-- Botón de teléfono - CAMBIAR +1234567890 por tu número -->
+      <a class="button" href="tel:+17879034242">
+        <i class="fas fa-phone"></i> Llamar
+      </a>
+      
+      <!-- Botón de WhatsApp - CAMBIAR 1234567890 por tu número -->
+      <a class="button" href="https://wa.me/7879034242">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      
+      <!-- Botón de Instagram - CAMBIAR tuusuario por tu usuario -->
+      <a class="button" href="https://www.instagram.com/metascoaching_group/?igsh=Ym02YWx4NmdxN282">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      
+      <!-- Botón de Facebook - CAMBIAR tuusuario por tu usuario -->
+      <a class="button" href="https://www.facebook.com/profile.php?id=61559843214907&mibextid=wwXIfr&rdid=gN4DGNEbsL6tzSBS&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14HvFioz9Lb%2F%3Fmibextid%3DwwXIfr">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+      
+      <!-- Botón de Website -->
+      <a class="button" href="https://metas-coaching-group.vercel.app/" target="_blank">
+        <i class="fas fa-globe"></i> Website
+      </a>
+    </div>
+
+    <!-- Botón para agregar contacto -->
+    <button class="button-wide" onclick="agregarContacto()">
+      <i class="fas fa-user-plus"></i> Agregar contacto
+    </button>
+    
+    <!-- Créditos - CAMBIAR o eliminar si no quieres mostrar -->
+    <p class="powered-by">Powered by HA Technologies</p>
+  </div>
+
+  <!-- === JAVASCRIPT EXTERNO === -->
+  <script src="index.js"></script>
+</body>
+</html>
