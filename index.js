@@ -53,3 +53,67 @@ END:VCARD`;
     window.URL.revokeObjectURL(url);
   }
 }
+
+/* Función para compartir la Business Card Page */
+function compartirCard() {
+  // URL de la página actual
+  const url = window.location.href;
+  const title = "Metas Coaching Group - Business Card";
+  const text = "¡Mira mi Business Card digital!";
+
+  // Verificar si el navegador soporta la API Web Share (principalmente móviles)
+  if (navigator.share) {
+    navigator.share({
+      title: title,
+      text: text,
+      url: url
+    }).then(() => {
+      console.log('Compartido exitosamente');
+    }).catch((error) => {
+      console.log('Error al compartir:', error);
+      // Fallback si falla el share nativo
+      fallbackShare(url, title, text);
+    });
+  } else {
+    // Fallback para navegadores que no soportan Web Share API
+    fallbackShare(url, title, text);
+  }
+}
+
+/* Función de respaldo para compartir en navegadores sin Web Share API */
+function fallbackShare(url, title, text) {
+  // Copiar URL al portapapeles
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(() => {
+      alert('¡Link copiado al portapapeles!\n\nAhora puedes pegarlo en cualquier app para compartir.');
+    }).catch(() => {
+      // Método alternativo si falla clipboard
+      copyToClipboardFallback(url);
+    });
+  } else {
+    // Método alternativo para navegadores más antiguos
+    copyToClipboardFallback(url);
+  }
+}
+
+/* Método alternativo para copiar al portapapeles */
+function copyToClipboardFallback(text) {
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  textArea.style.position = 'fixed';
+  textArea.style.left = '-999999px';
+  textArea.style.top = '-999999px';
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  
+  try {
+    document.execCommand('copy');
+    alert('¡Link copiado al portapapeles!\n\nAhora puedes pegarlo en cualquier app para compartir.');
+  } catch (err) {
+    // Si todo falla, mostrar el URL para que lo copien manualmente
+    prompt('Copia este link para compartir:', text);
+  }
+  
+  document.body.removeChild(textArea);
+}
