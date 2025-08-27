@@ -59,13 +59,11 @@ function compartirCard() {
   // URL de la página actual
   const url = window.location.href;
   const title = "Metas Coaching Group - Business Card";
-  const text = "¡Mira mi Business Card digital!";
 
   // Verificar si el navegador soporta la API Web Share (principalmente móviles)
   if (navigator.share) {
     navigator.share({
       title: title,
-      text: text,
       url: url
     }).then(() => {
       console.log('Compartido exitosamente');
