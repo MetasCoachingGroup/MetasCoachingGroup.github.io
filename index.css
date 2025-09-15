@@ -185,6 +185,34 @@ p {
   background-color: #fff5f1; /* Color de hover */
 }
 
+/* Redes sociales */
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: #f01f7b; /* mantenemos color */
+  color: white;
+  border-radius: 50%;
+  overflow: hidden;
+  text-decoration: none;
+  font-size: 28px; /* presencia tipo CSS2 */
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: background .2s, transform .05s, box-shadow .2s;
+}
+.social-btn:hover { background:#f01f7b; }          /* solo estilo, mismo tono base */
+.social-btn:active { transform: translateY(1px); }  /* micro-feedback */
+
 /* === RESPONSIVE DESIGN === */
 /* Estilos para dispositivos móviles (pantallas menores a 480px) */
 @media (max-width: 480px) {
