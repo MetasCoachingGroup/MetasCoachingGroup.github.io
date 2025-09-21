@@ -1,109 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <!-- Configuración básica del documento -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Myrna Ayala Business Card</title>
-    <!-- Título que aparece en la pestaña del navegador -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Redirecting...</title>
+        
+        <!-- Variable de configuración para la URL de destino -->
+        <script>
+            const REDIRECT_URL = "https://hatechnologiespr.github.io/MetasCoachingGroup/";
+        </script>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <!-- Redirección automática usando meta refresh -->
+        <meta http-equiv="refresh" id="metaRefresh"
+            content="0; url=">
 
-    <!-- Font Awesome para iconos - Si quieres otros iconos, cambia esta URL -->
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Redirección alternativa con JavaScript -->
+        <script>
+            // Configurar la redirección usando la variable
+            document.addEventListener('DOMContentLoaded', function() {
+                // Configurar meta refresh
+                document.getElementById('metaRefresh').setAttribute('content', '0; url=' + REDIRECT_URL);
+                
+                // Ejecutar redirección JavaScript
+                window.location.replace(REDIRECT_URL);
+            });
+        </script>
 
-    <!-- Estilos CSS externos -->
-    <link rel="stylesheet" href="index.css">
-
-    <!-- Manifest para PWA -->
-    <link rel="manifest" href="manifest.json">
-
-  </head>
-
-  <!-- === ESTRUCTURA HTML === -->
-  <body>
-    <!-- Contenedor principal de la tarjeta -->
-    <div class="card">
-
-      <!-- Sección de imágenes: banner y perfil superpuesta -->
-      <div class="image-container">
-        <!-- Imagen de fondo/banner - CAMBIAR src="images/Banner.png" por tu imagen -->
-        <img src="images/Banner.png" alt="Banner" class="banner">
-        <!-- Imagen de perfil - CAMBIAR src="images/Profile.jpg" por tu foto -->
-        <img src="images/Profile.png" alt="Foto de perfil" class="profile-img">
-      </div>
-
-      <!-- Información personal -->
-      <h1>Metas Coaching Group</h1> <!-- CAMBIAR por tu nombre -->
-      <p class="titulo">Myrna Ayala</p> <!-- CAMBIAR por tu ubicación -->
-      <p>Nuestro enfoque es dirigido a personas, equipos y organizaciones en sus
-        procesos de transformación y crecimiento, a través de programas de
-        coaching profesional y talleres especializados.</p>
-      <!-- CAMBIAR por tu descripción -->
-
-      <div>
-        <div class="social-row">
-          <a class="social-btn"
-            href="https://www.facebook.com/profile.php?id=61559843214907&mibextid=wwXIfr&rdid=gN4DGNEbsL6tzSBS&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14HvFioz9Lb%2F%3Fmibextid%3DwwXIfr"
-            aria-label="Facebook">
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a class="social-btn"
-            href="https://www.instagram.com/metascoaching_group/?igsh=Ym02YWx4NmdxN282"
-            aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Redirecting...</h1>
+            <div class="spinner"></div>
+            <p>Please wait, you are being redirected automatically.</p>
+            <p>If you are not redirected automatically,
+                <a href="" id="manualLink">click here</a>
+            </p>
         </div>
-      </div>
-
-      <!-- Grilla de botones de contacto/redes sociales -->
-      <div class="button-grid">
-        <!-- Botón de servicios - ejecuta función JavaScript -->
-        <button class="button" onclick="mostrarServicios()">
-          <i class="fas fa-edit"></i> Servicios
-        </button>
-
-        <!-- Botón de teléfono - CAMBIAR +1234567890 por tu número -->
-        <a class="button" href="tel:+17879034242">
-          <i class="fas fa-phone"></i> Llamar
-        </a>
-
-        <!-- Botón de WhatsApp - CAMBIAR 1234567890 por tu número -->
-        <a class="button" href="https://wa.me/7879034242">
-          <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-
-        <!-- Botón de Website -->
-        <a class="button" href="https://metas-coaching-group.vercel.app/"
-          target="_blank">
-          <i class="fas fa-globe"></i> Website
-        </a>
-      </div>
-
-      <!-- Contenedor para botones Share y Agregar contacto -->
-      <div class="button-container">
-        <!-- Botón para compartir -->
-        <button class="button-half" onclick="compartirCard()">
-          <i class="fas fa-share"></i> Share
-        </button>
-
-        <!-- Botón para agregar contacto -->
-        <button class="button-half" onclick="agregarContacto()">
-          <i class="fas fa-user-plus"></i> Agregar contacto
-        </button>
-      </div>
-
-      <!-- Créditos - CAMBIAR o eliminar si no quieres mostrar -->
-      <p class="powered-by">
-        <span style="cursor:pointer;"
-          onclick="window.location.href='mailto:HATechnologiesPR@outlook.com'">Powered
-          by HA Technologies</span>
-      </p>
-    </div>
-
-    <!-- === JAVASCRIPT EXTERNO === -->
-    <script src="index.js"></script>
-  </body>
+        
+        <!-- Configurar el enlace manual usando la variable -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('manualLink').href = REDIRECT_URL;
+            });
+        </script>
+    </body>
 </html>
